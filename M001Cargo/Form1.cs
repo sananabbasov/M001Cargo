@@ -13,7 +13,7 @@ namespace M001Cargo
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var user = db.Users.FirstOrDefault(x=>x.Email == txtEmail.Text);
+            var user = db.Users.FirstOrDefault(x => x.Email == txtEmail.Text);
 
             if (user == null)
             {
@@ -23,7 +23,8 @@ namespace M001Cargo
             {
                 if (user.Password == txtPassword.Text && user.Email == txtEmail.Text)
                 {
-                    MessageBox.Show("Xos geldiniz " + user.Name);
+                    Dashboard dashboard = new Dashboard();
+                    dashboard.Show();
                 }
                 else
                 {
